@@ -92,8 +92,8 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     @Override
     public boolean onQueryTextChange(String newText) {
 
-        List<String> filteredModelList = adapter.updateData(sampleList,newText);
-        adapter.setItems(filteredModelList);
+        adapter.updateData(sampleList,newText);
+
         adapter.notifyDataSetChanged();
         recyclerView.scrollToPosition(0);
 

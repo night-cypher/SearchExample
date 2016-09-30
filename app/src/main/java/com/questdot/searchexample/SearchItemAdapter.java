@@ -46,7 +46,7 @@ public class SearchItemAdapter extends RecyclerView.Adapter<SearchItemAdapter.Vi
         }
     }
 
-    public List<String> updateData(List<String> datas,String text) {
+    public void updateData(List<String> datas,String text) {
 
 
         ArrayList<String> newNames = new ArrayList<>();
@@ -56,14 +56,11 @@ public class SearchItemAdapter extends RecyclerView.Adapter<SearchItemAdapter.Vi
                 newNames.add(name);
             }
         }
-
-
-           // notifyDataSetChanged();
-
-        return newNames;
+        originalNamesList =newNames;
+        //return newNames;
     }
 
-    public void setItems(List<String> datas){
+ /*   public void setItems(List<String> datas){
         originalNamesList = new ArrayList<>(datas);
-    }
+    }*/
 }

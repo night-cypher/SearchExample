@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 
     private RecyclerView recyclerView;
     private SearchItemAdapter adapter;
-    private ArrayList<String> names;
+    private ArrayList<String> sampleList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        names = new ArrayList<>();
+        sampleList = new ArrayList<>();
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 
         addItem();
 
-        adapter = new SearchItemAdapter(names, this);
+        adapter = new SearchItemAdapter(sampleList, this);
 
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
@@ -46,15 +46,15 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     }
 
     public void addItem(){
-        names.add("android");
-        names.add("better");
-        names.add("coklate");
-        names.add("dog");
-        names.add("east");
-        names.add("fun");
-        names.add("gap");
-        names.add("happy");
-        names.add("illusion");
+        sampleList.add("android");
+        sampleList.add("better");
+        sampleList.add("coklate");
+        sampleList.add("dog");
+        sampleList.add("east");
+        sampleList.add("fun");
+        sampleList.add("gap");
+        sampleList.add("happy");
+        sampleList.add("illusion");
     }
 
     @Override
@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     @Override
     public boolean onQueryTextChange(String newText) {
 
-        List<String> filteredModelList = adapter.updateData(names,newText);
+        List<String> filteredModelList = adapter.updateData(sampleList,newText);
         adapter.setItems(filteredModelList);
         adapter.notifyDataSetChanged();
         recyclerView.scrollToPosition(0);
